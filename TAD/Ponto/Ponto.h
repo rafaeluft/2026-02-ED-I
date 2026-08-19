@@ -18,4 +18,16 @@ Ponto* Ponto_create(float, float);
  */
 void Ponto_print(Ponto*);
 
+/**
+ * Libera a memória alocada a um ponto
+ * @param Ponto* instância válida para um ponto
+ */
+void Ponto_delete(Ponto*);
+/**
+ * Calcula a dist euclidiana entre dois pontos
+ * @param Ponto* primeiro ponto
+ * @param Ponto* segundo ponto
+ * @return float com o cálculo da distância
+ */
+float Ponto_dist_eucl(Ponto*, Ponto*);
 #endif

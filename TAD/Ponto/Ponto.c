@@ -1,6 +1,7 @@
 #include "Ponto.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 struct _ponto{
     float x, y;
@@ -27,4 +28,14 @@ void Ponto_print(Ponto* ponto){
     if(ponto != NULL){
         printf("(%0.2f,%0.2f)", ponto->x, ponto->y);
     }
+}
+
+void Ponto_delete(Ponto* ponto){
+    free(ponto);
+}
+
+float Ponto_dist_eucl(Ponto* p1, Ponto* p2){
+    float dx = p2->x - p1->x;
+    float dy = p2->y - p1->y;
+    return sqrtf(dx*dx + dy*dy);
 }

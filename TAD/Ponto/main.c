@@ -9,5 +9,9 @@ int main(){
     putchar('\n');
     Ponto_print(p2);
     putchar('\n');
+
+    printf("Distancia entre os pontos: %f", Ponto_dist_eucl(p1, p2));
+    Ponto_delete(p1);
+    Ponto_delete(p2);
     return 0;
 }
