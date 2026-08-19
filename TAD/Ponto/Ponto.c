@@ -1,0 +1,30 @@
+#include "Ponto.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+struct _ponto{
+    float x, y;
+};
+/**
+ * Cria instâncias de ponto.
+ * @param float x
+ * @param float y
+ * @return Ponto* instância para um ponto preenchido ou NULL
+ */
+Ponto* Ponto_create(float x, float y){
+    Ponto* novo = malloc(sizeof(Ponto));
+    if(novo!=NULL){//conseguimos memória
+        novo->x = x;
+        novo->y = y;
+    }
+    return novo;
+}
+/**
+ * Imprime um ponto formatado com até duas casas.
+ * @param Ponto* instância válida para um ponto
+ */
+void Ponto_print(Ponto* ponto){
+    if(ponto != NULL){
+        printf("(%0.2f,%0.2f)", ponto->x, ponto->y);
+    }
+}
