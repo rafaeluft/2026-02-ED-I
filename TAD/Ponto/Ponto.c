@@ -1,4 +1,4 @@
-#include "../Ponto.h"
+#include "Ponto.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
