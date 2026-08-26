@@ -39,3 +39,13 @@ float Ponto_dist_eucl(Ponto* p1, Ponto* p2){
     float dy = p2->y - p1->y;
     return sqrtf(dx*dx + dy*dy);
 }
+
+void Ponto_get_x(Ponto* ponto, float* p_x){
+    if(ponto != NULL)
+        *p_x = ponto->x;
+}
+void Ponto_set_x(Ponto* ponto, float x){
+    if(ponto != NULL){
+        ponto->x = x;
+    }
+}
