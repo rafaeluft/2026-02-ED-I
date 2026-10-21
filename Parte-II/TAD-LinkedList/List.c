@@ -53,6 +53,30 @@ bool List_insert_end(List* lista, int info){
     }
     return true;
 }
+bool List_search_n_destroy(List* lista, int info){
+
+    TNo* x;
+    if (info == lista->inicio->info)
+    {
+        x = lista->inicio;
+        lista->inicio = x->prox;
+    }
+    else{
+        TNo* y=lista->inicio;
+        x = lista->inicio->prox;
+        while(x!=NULL && x->info!=info){
+            y = x;
+            x = x->prox;
+        }
+        //1: x se tornou NULL
+        if(x==NULL) return false; //nao encontrei
+        //2: x->info é info que procuro
+        y->prox = x->prox;
+    }
+    //x deve ser excluído
+    free(x);
+    return true;
+}
 void List_print(List* lista){
     if(lista != NULL)
     {

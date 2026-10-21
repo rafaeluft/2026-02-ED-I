@@ -8,5 +8,15 @@ int main(){
             printf("Erro ao inserir V[%i]=%i\n", i, V[i]);
     }
     List_print(lista);
+    puts("Deletando o 4");
+    List_search_n_destroy(lista, 4);
+    List_print(lista);
+    puts("Deletando o 1");
+    List_search_n_destroy(lista, 1);
+    List_print(lista);
+    puts("Deletando o 50");
+    if(!List_search_n_destroy(lista, 50))
+        puts("Nao encontrei o 50");
+    List_print(lista);
     return 0;
 }
