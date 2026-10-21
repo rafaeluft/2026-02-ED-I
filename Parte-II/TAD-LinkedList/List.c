@@ -32,6 +32,27 @@ bool List_insert_begin(List* lista, int info){
     lista->inicio = novo;
     return true;
 }
+
+bool List_insert_end(List* lista, int info){
+    if(lista == NULL) 
+        return false;
+    TNo* novo = malloc(sizeof(TNo));
+    if(novo == NULL) 
+        return false;
+    //Aqui o novo foi alocado
+    novo->info = info;
+    novo->prox = NULL;
+    //O novo foi preenchido
+    if(lista->inicio==NULL)
+	    lista->inicio = novo;
+    else{
+        TNo* aux = lista->inicio;
+        while(aux->prox!=NULL)
+            aux = aux->prox;
+        aux->prox = novo;
+    }
+    return true;
+}
 void List_print(List* lista){
     if(lista != NULL)
     {
