@@ -9,10 +9,12 @@ int main(){
     }
     List_print(lista);
     puts("Deletando o 4");
-    List_search_n_destroy(lista, 4);
+    if(!List_search_n_destroy(lista, 4))
+        puts("Nao encontrei o 4");
     List_print(lista);
     puts("Deletando o 1");
-    List_search_n_destroy(lista, 1);
+    if(!List_search_n_destroy(lista, 1))
+        puts("Nao encontrei o 1");
     List_print(lista);
     puts("Deletando o 50");
     if(!List_search_n_destroy(lista, 50))
