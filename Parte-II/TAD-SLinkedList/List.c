@@ -18,9 +18,24 @@ TSLinkedList* TSLinkedList_create(){
     } return nova;
 }
 bool TSLinkedList_insert(TSLinkedList* list, int info){
-    //Substitua a linha a seguir pela implementação
-    puts("bool TSLinkedList_insert(TSLinkedList*, int); nao implementada!");
-    return false;
+    if(list==NULL) return false;
+    TNo* novo = malloc(sizeof(TNo));
+    if(novo == NULL) return false;
+    
+    novo->info = info;
+    
+    if(list->inicio == NULL || info <= list->inicio->info){
+        novo->prox = list->inicio;
+        list->inicio = novo;
+    }
+    else{
+        TNo* ant = list->inicio;
+        while(ant->prox!=NULL && ant->prox->info < info)
+            ant = ant->prox;
+        novo->prox = ant->prox;
+        ant->prox = novo;
+    }
+    return true;
 }
 void TSLinkedList_print(TSLinkedList* lista){
     if(lista != NULL)
